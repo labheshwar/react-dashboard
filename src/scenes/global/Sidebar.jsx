@@ -10,7 +10,6 @@ import DirectionsCarOutlined from '@mui/icons-material/DirectionsCarOutlined';
 import LocalParkingOutlined from '@mui/icons-material/LocalParkingOutlined';
 import BarChartOutlinedIcon from '@mui/icons-material/BarChartOutlined';
 import PieChartOutlineOutlinedIcon from '@mui/icons-material/PieChartOutlineOutlined';
-import TimelineOutlinedIcon from '@mui/icons-material/TimelineOutlined';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
@@ -151,13 +150,6 @@ const Sidebar = () => {
               title='Pie Chart'
               to='/pie'
               icon={<PieChartOutlineOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              title='Line Chart'
-              to='/line'
-              icon={<TimelineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
