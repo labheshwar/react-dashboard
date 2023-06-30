@@ -47,6 +47,7 @@ const PieChart = ({ title, data }) => {
               },
             },
           },
+
           legends: {
             text: {
               fill: colors.grey[100],
@@ -93,6 +94,17 @@ const PieChart = ({ title, data }) => {
             spacing: 10,
           },
         ]}
+        tooltip={({ datum: { label, value, color } }) => (
+          <strong
+            style={{
+              color: 'black',
+              backgroundColor: 'white',
+              padding: '1rem',
+            }}
+          >
+            {value}
+          </strong>
+        )}
         legends={[
           {
             anchor: 'bottom',
@@ -112,7 +124,7 @@ const PieChart = ({ title, data }) => {
               {
                 on: 'hover',
                 style: {
-                  itemTextColor: '#fff',
+                  itemTextColor: 'red',
                 },
               },
             ],

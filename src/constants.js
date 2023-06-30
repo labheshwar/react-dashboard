@@ -7,3 +7,5 @@ export const PARKING_API = BASE_URL + '/parking';
 export const USERS_API = BASE_URL + '/users';
 
 export const BOOKINGS_API = BASE_URL + '/bookings';
+
+export const BAR_CHART_API = BASE_URL + '/dashboard/barChart';
