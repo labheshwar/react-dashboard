@@ -4,6 +4,7 @@ import { tokens } from '../../theme';
 import Header from '../../components/Header';
 import { useTheme } from '@mui/material';
 import { useState, useEffect } from 'react';
+import { BOOKINGS_API } from '../../constants';
 
 const Bookings = () => {
   const theme = useTheme();
@@ -42,7 +43,7 @@ const Bookings = () => {
   }, []);
 
   const callApi = async () => {
-    const response = await fetch('http://192.168.10.24:8042/bookings');
+    const response = await fetch(BOOKINGS_API);
     const data = await response.json();
     const dataArray = data?.map((item, index) => {
       const dates = item?.bookingDates?.map((data) => {

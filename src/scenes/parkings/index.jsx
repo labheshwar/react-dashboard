@@ -3,6 +3,7 @@ import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { tokens } from '../../theme';
 import Header from '../../components/Header';
 import { useState, useEffect } from 'react';
+import { PARKING_API } from '../../constants';
 
 const Parkings = () => {
   const theme = useTheme();
@@ -52,7 +53,7 @@ const Parkings = () => {
   }, []);
 
   const callApi = async () => {
-    const response = await fetch('http://192.168.10.24:8042/parking');
+    const response = await fetch(PARKING_API);
     const data = await response.json();
     const dataArray = data.map((item, index) => {
       const date = new Date(item?.createDate);

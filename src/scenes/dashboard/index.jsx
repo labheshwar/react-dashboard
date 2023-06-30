@@ -8,6 +8,7 @@ import TrafficIcon from '@mui/icons-material/Traffic';
 import Header from '../../components/Header';
 import LineChart from '../../components/LineChart';
 import StatBox from '../../components/StatBox';
+import { PARKING_API, DASHBOARD_API } from '../../constants';
 
 const Dashboard = () => {
   const theme = useTheme();
@@ -32,9 +33,7 @@ const Dashboard = () => {
 
   const callDashboardApi = async () => {
     try {
-      const response = await fetch(
-        'http://192.168.10.24:8042/dashboard/dashboardCounts'
-      );
+      const response = await fetch(DASHBOARD_API);
       const data = await response.json();
       setDashboardData(data);
     } catch (error) {
@@ -44,7 +43,7 @@ const Dashboard = () => {
 
   const callParkingApi = async () => {
     try {
-      const response = await fetch('http://192.168.10.24:8042/parking');
+      const response = await fetch(PARKING_API);
       const data = await response.json();
       console.log(data);
       setParkingData(data);

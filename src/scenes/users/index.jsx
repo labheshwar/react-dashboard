@@ -6,6 +6,7 @@ import LockOpenOutlinedIcon from '@mui/icons-material/LockOpenOutlined';
 import SecurityOutlinedIcon from '@mui/icons-material/SecurityOutlined';
 import Header from '../../components/Header';
 import { useState, useEffect } from 'react';
+import { USERS_API } from './../../constants';
 
 const Users = () => {
   const theme = useTheme();
@@ -79,7 +80,7 @@ const Users = () => {
   }, []);
 
   const callApi = async () => {
-    const response = await fetch('http://192.168.10.24:8042/users');
+    const response = await fetch(USERS_API);
     const data = await response.json();
     const dataArray = data.map((item, index) => {
       return {
